@@ -1,0 +1,752 @@
+/* ================= RESET ================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ================= BODY ================= */
+
+body{
+
+  font-family:Arial,sans-serif;
+
+  background:
+  linear-gradient(
+    135deg,
+    #0f172a,
+    #1e3a8a
+  );
+
+  min-height:100vh;
+
+  color:#111827;
+
+}
+
+/* ================= LOGIN PAGE ================= */
+
+.container{
+
+  display:flex;
+
+  min-height:100vh;
+
+}
+
+/* LEFT */
+
+.left-side{
+
+  width:40%;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  background:white;
+
+  padding:40px;
+
+}
+
+/* RIGHT */
+
+.right-side{
+
+  width:60%;
+
+  position:relative;
+
+}
+
+.right-side img{
+
+  width:100%;
+
+  height:100vh;
+
+  object-fit:cover;
+
+}
+
+/* OVERLAY */
+
+.overlay{
+
+  position:absolute;
+
+  inset:0;
+
+  background:rgba(0,0,0,0.55);
+
+}
+
+/* CONTENT */
+
+.content{
+
+  position:absolute;
+
+  top:50%;
+
+  left:50%;
+
+  transform:translate(-50%,-50%);
+
+  color:white;
+
+  text-align:center;
+
+  width:90%;
+
+}
+
+.content h1{
+
+  font-size:55px;
+
+  margin-bottom:15px;
+
+}
+
+.content p{
+
+  font-size:20px;
+
+  line-height:1.6;
+
+}
+
+/* ================= LOGIN BOX ================= */
+
+.login-box{
+
+  width:100%;
+
+  max-width:400px;
+
+}
+
+.login-box h1{
+
+  margin-bottom:20px;
+
+  color:#2563eb;
+
+  text-align:center;
+
+  font-size:40px;
+
+}
+
+/* ================= INPUTS ================= */
+
+input,
+select{
+
+  width:100%;
+
+  padding:14px;
+
+  margin-top:15px;
+
+  border-radius:12px;
+
+  border:1px solid #cbd5e1;
+
+  font-size:15px;
+
+  outline:none;
+
+  transition:0.3s;
+
+}
+
+input:focus,
+select:focus{
+
+  border-color:#2563eb;
+
+  box-shadow:
+  0 0 8px rgba(
+    37,99,235,0.4
+  );
+
+}
+
+/* ================= BUTTONS ================= */
+
+button{
+
+  width:100%;
+
+  padding:14px;
+
+  margin-top:15px;
+
+  border:none;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+  color:white;
+
+  font-weight:bold;
+
+  font-size:15px;
+
+  transition:0.3s;
+
+}
+
+button:hover{
+
+  transform:translateY(-2px);
+
+}
+
+/* COLORS */
+
+.admin-btn{
+
+  background:#0f766e;
+
+}
+
+.admin-btn:hover{
+
+  background:#115e59;
+
+}
+
+.create-btn{
+
+  background:#2563eb;
+
+}
+
+.create-btn:hover{
+
+  background:#1d4ed8;
+
+}
+
+.customer-btn{
+
+  background:#0891b2;
+
+}
+
+.customer-btn:hover{
+
+  background:#0e7490;
+
+}
+
+.logout-btn{
+
+  width:auto;
+
+  padding:10px 20px;
+
+  background:#dc2626;
+
+}
+
+.logout-btn:hover{
+
+  background:#b91c1c;
+
+}
+
+.book-btn{
+
+  background:#2563eb;
+
+}
+
+.book-btn:hover{
+
+  background:#1d4ed8;
+
+}
+
+.service-btn{
+
+  background:#f59e0b;
+
+}
+
+.service-btn:hover{
+
+  background:#d97706;
+
+}
+
+.done-btn{
+
+  background:#16a34a;
+
+}
+
+.done-btn:hover{
+
+  background:#15803d;
+
+}
+
+.call-btn{
+
+  background:#2563eb;
+
+}
+
+.call-btn:hover{
+
+  background:#1d4ed8;
+
+}
+
+/* ================= FORM PAGE ================= */
+
+.form-page{
+
+  min-height:100vh;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  padding:30px;
+
+}
+
+.form-card{
+
+  width:100%;
+
+  max-width:500px;
+
+  background:white;
+
+  padding:35px;
+
+  border-radius:20px;
+
+  box-shadow:
+  0 10px 30px rgba(
+    0,0,0,0.2
+  );
+
+}
+
+.form-card h1{
+
+  text-align:center;
+
+  margin-bottom:20px;
+
+  color:#2563eb;
+
+}
+
+/* ================= BOOKING FORM ================= */
+
+.booking-form{
+
+  background:white;
+
+  padding:20px;
+
+  border-radius:15px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
+
+  margin:0 auto 20px auto;
+
+  box-shadow:
+  0 4px 12px rgba(
+    0,0,0,0.1
+  );
+
+  max-width:400px;
+
+  width:100%;
+
+}
+
+.booking-form h2{
+
+  font-size:22px;
+
+  text-align:center;
+
+  color:#0f766e;
+
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard-page{
+
+  min-height:100vh;
+
+}
+
+/* NAVBAR */
+
+.navbar{
+
+  background:#0f172a;
+
+  color:white;
+
+  padding:20px 30px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  box-shadow:
+  0 4px 10px rgba(
+    0,0,0,0.2
+  );
+
+}
+
+.navbar h1{
+
+  font-size:28px;
+
+}
+
+/* CONTENT */
+
+.dashboard-content{
+
+  padding:30px;
+
+}
+
+/* SECTION CARD */
+
+.section-card{
+
+  background:white;
+
+  padding:25px;
+
+  border-radius:20px;
+
+  margin-bottom:20px;
+
+  box-shadow:
+  0 6px 20px rgba(
+    0,0,0,0.1
+  );
+
+}
+
+/* BUSINESS CARD */
+
+.business-card{
+
+  border:1px solid #e2e8f0;
+
+  padding:25px;
+
+  border-radius:18px;
+
+  margin-top:20px;
+
+  background:white;
+
+  transition:0.3s;
+
+  box-shadow:
+  0 6px 15px rgba(
+    0,0,0,0.08
+  );
+
+}
+
+.business-card:hover{
+
+  transform:translateY(-5px);
+
+}
+
+.business-card h2{
+
+  color:#2563eb;
+
+  margin-bottom:12px;
+
+}
+
+.business-card p{
+
+  margin-bottom:10px;
+
+  color:#374151;
+
+}
+
+/* TICKET CARD */
+
+.ticket-card{
+
+  border:1px solid #cbd5e1;
+
+  padding:20px;
+
+  border-radius:15px;
+
+  margin-top:20px;
+
+  background:#f8fafc;
+
+}
+
+/* ACTION BUTTONS */
+
+.action-buttons{
+
+  display:flex;
+
+  gap:10px;
+
+  margin-top:15px;
+
+  flex-wrap:wrap;
+
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(0,0,0,0.6);
+
+  display:none;
+
+  justify-content:center;
+
+  align-items:center;
+
+  padding:20px;
+
+  z-index:1000;
+
+}
+
+.modal-box{
+
+  width:100%;
+
+  max-width:450px;
+
+  background:white;
+
+  padding:30px;
+
+  border-radius:20px;
+
+  animation:popup 0.3s ease;
+
+}
+
+/* POPUP */
+
+@keyframes popup{
+
+  from{
+
+    transform:scale(0.8);
+
+    opacity:0;
+
+  }
+
+  to{
+
+    transform:scale(1);
+
+    opacity:1;
+
+  }
+
+}
+
+/* ================= EXTRA BUTTONS ================= */
+
+.home-btn{
+
+  width:auto;
+
+  padding:10px 20px;
+
+  background:#2563eb;
+
+  margin-right:10px;
+
+}
+
+.home-btn:hover{
+
+  background:#1d4ed8;
+
+}
+
+.delete-btn{
+
+  width:auto;
+
+  padding:10px 20px;
+
+  background:#dc2626;
+
+}
+
+.delete-btn:hover{
+
+  background:#b91c1c;
+
+}
+
+.view-btn{
+
+  width:auto;
+
+  padding:10px 20px;
+
+  background:#f59e0b;
+
+}
+
+.view-btn:hover{
+
+  background:#d97706;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+  .container{
+
+    flex-direction:column;
+
+  }
+
+  .left-side,
+  .right-side{
+
+    width:100%;
+
+  }
+
+  .right-side img{
+
+    height:300px;
+
+  }
+
+  .content h1{
+
+    font-size:40px;
+
+  }
+
+}
+
+@media(max-width:600px){
+
+  .navbar{
+
+    flex-direction:column;
+
+    gap:15px;
+
+    text-align:center;
+
+  }
+
+  .dashboard-content{
+
+    padding:15px;
+
+  }
+
+  .form-card{
+
+    padding:25px;
+
+  }
+
+  .content h1{
+
+    font-size:32px;
+
+  }
+
+  .content p{
+
+    font-size:16px;
+
+  }
+
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+    background:#0f172a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px 20px;
+
+    margin-top:40px;
+
+}
+
+.footer-content h3{
+
+    font-size:24px;
+
+    margin-bottom:10px;
+
+    color:#60a5fa;
+
+}
+
+.footer-content p{
+
+    margin-top:5px;
+
+    color:#cbd5e1;
+
+}
+

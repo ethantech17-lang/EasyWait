@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Customer Queue
+    </title>
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+    <link rel="icon" href="/static/favicon.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <div class="dashboard-page">
+
+        <!-- ================= NAVBAR ================= -->
+
+        <div class="navbar">
+
+            <h1>
+                EasyWait Customer
+            </h1>
+
+            <button
+                class="home-btn"
+                onclick="
+                window.location.href='/'
+                "
+            >
+
+                Home
+
+            </button>
+
+        </div>
+
+        <!-- ================= CONTENT ================= -->
+
+        <div class="dashboard-content">
+
+            <!-- ================= BUSINESS LIST ================= -->
+
+            <div class="section-card">
+
+                <h2>
+                    Available Businesses
+                </h2>
+
+                <div id="businessList">
+
+                    <p>
+                        Loading Businesses...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= BOOKING MODAL ================= -->
+
+    <div
+        class="modal"
+        id="bookingModal"
+    >
+
+        <div class="modal-box">
+
+            <h2>
+                Join Queue
+            </h2>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Your Name"
+            >
+
+            <input
+                type="text"
+                id="customerPhone"
+                placeholder="Phone Number"
+            >
+
+            <input
+                type="email"
+                id="customerEmail"
+                placeholder="Email Address"
+            >
+
+            <input
+                type="date"
+                id="bookingDate"
+            >
+
+            <input
+                type="time"
+                id="bookingTime"
+            >
+
+            <button
+                class="book-btn"
+                onclick="submitBooking()"
+            >
+
+                Join Queue
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+    let selectedBusinessId = null;
+
+    /* ================= LOAD BUSINESSES ================= */
+
+    async function loadBusinesses(){
+
+        let businessList =
+        document.getElementById(
+            "businessList"
+        );
+
+        try{
+
+            let response =
+            await fetch(
+                "/get_businesses"
+            );
+
+            let businesses =
+            await response.json();
+
+            businessList.innerHTML = "";
+
+            if(businesses.length === 0){
+
+                businessList.innerHTML = `
+
+                    <p>
+                    No Businesses Found
+                    </p>
+
+                `;
+
+                return;
+
+            }
+
+            businesses.forEach((business)=>{
+
+                businessList.innerHTML += `
+
+                    <div class="business-card">
+
+                        <h2>
+                        ${business.name}
+                        </h2>
+
+                        <p>
+                        <b>Type:</b>
+                        ${business.type}
+                        </p>
+
+                        <p>
+                        <b>Location:</b>
+                        ${business.location}
+                        </p>
+
+                        <p>
+                        <b>Email:</b>
+                        ${business.email}
+                        </p>
+
+                        <p>
+                        <b>Phone:</b>
+                        ${business.phone}
+                        </p>
+
+                        <button
+                            class="book-btn"
+                            onclick="
+                            openBookingModal(
+                            ${business.id}
+                            )
+                            "
+                        >
+
+                            Join Queue
+
+                        </button>
+
+                    </div>
+
+                `;
+
+            });
+
+        }catch(error){
+
+            console.log(error);
+
+        }
+
+    }
+
+    /* ================= OPEN MODAL ================= */
+
+    function openBookingModal(id){
+
+        selectedBusinessId = id;
+
+        document.getElementById(
+            "bookingModal"
+        ).style.display = "flex";
+
+    }
+
+    /* ================= SUBMIT BOOKING ================= */
+
+    async function submitBooking(){
+
+        let customer_name =
+        document.getElementById(
+            "customerName"
+        ).value.trim();
+
+        let phone =
+        document.getElementById(
+            "customerPhone"
+        ).value.trim();
+
+        let email =
+        document.getElementById(
+            "customerEmail"
+        ).value.trim();
+
+        let booking_date =
+        document.getElementById(
+            "bookingDate"
+        ).value;
+
+        let booking_time =
+        document.getElementById(
+            "bookingTime"
+        ).value;
+
+        /* VALIDATION */
+
+        if(
+
+            customer_name === "" ||
+            phone === "" ||
+            email === "" ||
+            booking_date === "" ||
+            booking_time === ""
+
+        ){
+
+            alert(
+                "Fill all fields"
+            );
+
+            return;
+
+        }
+
+        try{
+
+            let response =
+            await fetch(
+
+                "/join_queue",
+
+                {
+
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":
+                        "application/json"
+                    },
+
+                    body:JSON.stringify({
+
+                        business_id:
+                        selectedBusinessId,
+
+                        customer_name:
+                        customer_name,
+
+                        phone:phone,
+
+                        email:email,
+
+                        booking_date:
+                        booking_date,
+
+                        booking_time:
+                        booking_time
+
+                    })
+
+                }
+
+            );
+
+            let result =
+            await response.json();
+
+            console.log(result);
+
+            if(result.success){
+
+                alert(
+                    "Queue Joined Successfully"
+                );
+
+                document.getElementById(
+                    "bookingModal"
+                ).style.display = "none";
+
+            }else{
+
+                alert(
+                    result.message
+                );
+
+            }
+
+        }catch(error){
+
+            console.log(error);
+
+            alert(
+                "Server Error"
+            );
+
+        }
+
+    }
+
+    /* ================= AUTO LOAD ================= */
+
+    window.onload = function(){
+
+        loadBusinesses();
+
+    };
+
+    </script>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h3>
+            EasyWait
+        </h3>
+
+        <p>
+            Smart Queue Management System
+        </p>
+
+        <p>
+            Developed By Ethan Tech
+        </p>
+
+        <p>
+            © 2026 All Rights Reserved
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>
+

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <link rel="icon" href="/static/favicon.png" type="image/x-icon">
+
+    <title>
+        EasyWait
+    </title>
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- ================= CONTAINER ================= -->
+
+    <div class="container">
+
+        <!-- ================= LEFT SIDE ================= -->
+
+        <div class="left-side">
+
+            <div class="login-box">
+
+                <h1>
+                    EasyWait
+                </h1>
+
+                <p
+                    style="
+                    text-align:center;
+                    margin-bottom:20px;
+                    color:#64748b;
+                    "
+                >
+
+                    Queue Management System
+
+                </p>
+
+                <!-- ================= BUTTONS ================= -->
+
+                <button
+                    class="admin-btn"
+                    onclick="showLogin()"
+                >
+
+                    Admin Login
+
+                </button>
+
+                <button
+                    class="create-btn"
+                    onclick="showRegister()"
+                >
+
+                    Create Admin Account
+
+                </button>
+
+                <button
+                    class="customer-btn"
+                    onclick="
+                    window.location.href='/customer'
+                    "
+                >
+
+                    Customer Dashboard
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ================= RIGHT SIDE ================= -->
+
+        <div class="right-side">
+
+            <img
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop"
+            >
+
+            <div class="overlay"></div>
+
+            <div class="content">
+
+                <h1>
+                    EasyWait
+                </h1>
+
+                <p>
+
+                    Smart Queue Management
+                    <br>
+                    Faster Service
+                    <br>
+                    Better Customer Experience
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= LOGIN MODAL ================= -->
+
+    <div
+        class="modal"
+        id="loginModal"
+    >
+
+        <div class="modal-box">
+
+            <h2>
+                Admin Login
+            </h2>
+
+            <input
+                type="text"
+                id="loginUsername"
+                placeholder="Username"
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+            >
+
+            <button
+                class="admin-btn"
+                onclick="loginAdmin()"
+            >
+
+                Login
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= REGISTER MODAL ================= -->
+
+    <div
+        class="modal"
+        id="registerModal"
+    >
+
+        <div class="modal-box">
+
+            <h2>
+                Create Admin Account
+            </h2>
+
+            <input
+                type="text"
+                id="registerUsername"
+                placeholder="Username"
+            >
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Password"
+            >
+
+            <button
+                class="create-btn"
+                onclick="registerAdmin()"
+            >
+
+                Register
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= JS ================= -->
+
+    <script src="/static/script.js"></script>
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h3>
+            EasyWait
+        </h3>
+
+        <p>
+            Smart Queue Management System
+        </p>
+
+        <p>
+            Developed By Ethan Tech
+        </p>
+
+        <p>
+            © 2026 All Rights Reserved
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register Business</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div class="form-page">
+
+        <div class="form-card">
+
+            <h1>Register Business</h1>
+
+            <!-- OWNER NAME -->
+
+            <input
+                type="text"
+                id="owner_name"
+                placeholder="Business Owner Name"
+            >
+
+            <!-- BUSINESS NAME -->
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Business Name"
+            >
+
+            <!-- BUSINESS TYPE -->
+
+            <input
+                type="text"
+                id="type"
+                placeholder="Business Type"
+            >
+
+            <!-- LOCATION -->
+
+            <input
+                type="text"
+                id="location"
+                placeholder="Business Location"
+            >
+
+            <!-- EMAIL -->
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Business Gmail Address"
+            >
+
+            <!-- PHONE -->
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Business Phone Number"
+            >
+
+            <!-- USERNAME -->
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Create Username"
+            >
+
+            <!-- ACCOUNT PASSWORD -->
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Create Account Password"
+            >
+
+            <!-- CONFIRM PASSWORD -->
+
+            <input
+                type="password"
+                id="confirm_password"
+                placeholder="Confirm Account Password"
+            >
+
+            <!-- GMAIL APP PASSWORD -->
+
+            <input
+                type="password"
+                id="business_password"
+                placeholder="Business Gmail App Password"
+            >
+
+            <!-- SUBSCRIPTION PLAN -->
+
+            <select id="plan">
+
+                <option value="">
+                    Select Subscription Plan
+                </option>
+
+                <option value="starter">
+                    Starter - KES 500 / Month
+                </option>
+
+                <option value="business">
+                    Business - KES 1,500 / Month
+                </option>
+
+                <option value="enterprise">
+                    Enterprise - KES 5,000 / Month
+                </option>
+
+            </select>
+
+            <!-- PAYMENT STATUS -->
+
+            <input
+                type="hidden"
+                id="payment_status"
+                value="pending"
+            >
+
+            <!-- TERMS -->
+
+            <div style="margin-top:15px;text-align:left;">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                    >
+
+                    I agree to the Terms and Conditions
+
+                </label>
+
+            </div>
+
+            <p
+                style="
+                color:gray;
+                font-size:14px;
+                margin-top:10px;
+                "
+            >
+
+                Use Gmail App Password,
+                not your normal Gmail password.
+
+            </p>
+
+            <!-- REGISTER BUTTON -->
+
+            <button
+                class="create-btn"
+                onclick="registerBusiness()"
+            >
+
+                Continue To Payment
+
+            </button>
+
+            <!-- HOME BUTTON -->
+
+            <button
+                class="home-btn"
+                onclick="window.location.href='/'"
+            >
+
+                Home
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <h3>EasyWait</h3>
+
+            <p>Smart Queue Management System</p>
+
+            <p>Developed By Ethan Tech</p>
+
+            <p>© 2026 All Rights Reserved</p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

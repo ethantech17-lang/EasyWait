@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Admin Dashboard
+    </title>
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+<link rel="icon" href="/static/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- ================= DASHBOARD PAGE ================= -->
+
+    <div class="dashboard-page">
+
+        <!-- ================= NAVBAR ================= -->
+
+        <div class="navbar">
+
+            <h1>
+                EasyWait Dashboard
+            </h1>
+
+            <div>
+
+                <button
+                    class="home-btn"
+                    onclick="
+                    window.location.href='/'
+                    "
+                >
+
+                    Home
+
+                </button>
+
+                <button
+                    class="logout-btn"
+                    onclick="logout()"
+                >
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ================= DASHBOARD CONTENT ================= -->
+
+        <div class="dashboard-content">
+
+            <!-- ================= MY BUSINESS ================= -->
+
+            <div class="section-card">
+
+                <h2>
+                    My Business
+                </h2>
+
+                <div id="businessInfo">
+
+                    <p>
+                        Loading Business...
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- ================= MY QUEUE ================= -->
+
+            <div class="section-card">
+
+                <h2>
+                    Customer Queue
+                </h2>
+
+                <div id="queueList">
+
+                    <p>
+                        Loading Queue...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="/static/script.js"></script>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h3>
+            EasyWait
+        </h3>
+
+        <p>
+            Smart Queue Management System
+        </p>
+
+        <p>
+            Developed By Ethan Tech
+        </p>
+
+        <p>
+            © 2026 All Rights Reserved
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
+
